@@ -4,4 +4,12 @@ class Room < ActiveRecord::Base
 	def self.search(query)
 	  Room.where("address like ?", "%#{query}%")
 	end
+
+validates :address, presence: true
+validates :rent, presence: true
+validates :util_fee, presence: true
+validates :apt_roomnum, presence: true
+
+
 end
+
