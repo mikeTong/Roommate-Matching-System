@@ -1,0 +1,65 @@
+<%= form_for(@room) do |f| %>
+  <% if @room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+      <% @room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :entry_id %><br>
+    <%= f.number_field :entry_id %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :rent %><br>
+    <%= f.text_field :rent %>
+  </div>
+  <div class="field">
+    <%= f.label :util_fee %><br>
+    <%= f.text_field :util_fee %>
+  </div>
+  <div class="field">
+    <%= f.label :apt_roomnum %><br>
+    <%= f.number_field :apt_roomnum %>
+  </div>
+  <div class="field">
+    <%= f.label :apt_bathnum %><br>
+    <%= f.number_field :apt_bathnum %>
+  </div>
+  <div class="field">
+    <%= f.label :apt_gender %><br>
+    <%= f.text_field :apt_gender %>
+  </div>
+  <div class="field">
+    <%= f.label :univ_id %><br>
+    <%= f.number_field :univ_id %>
+  </div>
+  <div class="field">
+    <%= f.label :acpt_distance %><br>
+    <%= f.number_field :acpt_distance %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br>
+    <%= f.text_area :desc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

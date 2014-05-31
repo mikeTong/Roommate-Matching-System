@@ -1,0 +1,66 @@
+<div class="center hero-unit">
+  <h1>Welcome to Roommate Matching System</h1>
+
+  <h2>
+    You can input your requirement here:
+	<%= form_tag(rooms_path,method: :get) do %>   
+	<%= text_field_tag :search, params[:search], placeholder: "Search " %>
+	      <button class="btn" type="submit">Go!</button>
+	<% end %>
+  </h2>
+</div>
+<h1>Rooms Available</h1>
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <!--th>Entry</th>
+      <th>Latitude</th>
+      <th>Longitude</th-->
+      <th><center>Address</center></th>
+      <th><center>Rent</center></th>
+      <!--th>Util fee</th-->
+      <th><center>Room Number</center></th>
+      <!--th>Apt bathnum</th-->
+      <th><center>Gender</center></th>
+      <!--th>Univ</th-->
+      <th><center>Distance</center></th>
+      <th><center>Description</center></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <!--Commented by Chen Sun:no need to show these attributes-->
+        <!--td><%= room.entry_id %></td-->
+        <!--td><%= room.latitude %></td-->
+        <!--td><%= room.longitude %></td-->
+        <td><%= room.address %></td>
+        <td><%= room.rent %></td>
+        <!--td><%= room.util_fee %></td-->
+        <td><center><%= room.apt_roomnum %></center></td>
+        <!--td><%= room.apt_bathnum %></td-->
+        <td><%= room.apt_gender %></td>
+        <!--td><%= room.univ_id %></td-->
+        <%room.acpt_distance=room.distance_to('500 El Camino Real, Santa Clara') %>
+        <td>
+        	<% if room.acpt_distance.to_s =='' || room.acpt_distance < 1.0%>
+        		<%='< 1 mile'%>
+			<% else %>
+			  	<%=room.acpt_distance.to_i.to_s + ' miles'%>
+			<%end%>
+        </td>
+        <td><%= room.desc %></td>
+        <td><%= link_to 'Show', room %></td>
+        <!--td><%= link_to 'Edit', edit_room_path(room) %></td-->
+        <!--td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Room', new_room_path,class: "btn btn-large btn-primary" %>

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entry_id: 1
+  latitude: 1.5
+  longitude: 1.5
+  address: MyString
+  rent: 9.99
+  util_fee: 9.99
+  apt_roomnum: 1
+  apt_bathnum: 1
+  apt_gender: MyString
+  univ_id: 1
+  acpt_distance: 1
+  desc: MyText
+
+two:
+  entry_id: 1
+  latitude: 1.5
+  longitude: 1.5
+  address: MyString
+  rent: 9.99
+  util_fee: 9.99
+  apt_roomnum: 1
+  apt_bathnum: 1
+  apt_gender: MyString
+  univ_id: 1
+  acpt_distance: 1
+  desc: MyText
