@@ -8,16 +8,19 @@
 	<%= text_field_tag :search, params[:search], placeholder: "Search " %>
 	      <button class="btn" type="submit">Go!</button>
 	<% end %>
+	<div >
+	<!--%= button_to 'Refresh Entries', method: :pull_data_from_craiglist, class: "btn btn-large btn-primary"%-->
+	</div>
   </h2>
 </div>
 
 <!--Call helper method to pull data from craiglist-->
-<%pull_data_from_craiglist%>
+<!--%pull_data_from_craiglist%-->
 <!--%calculate_distance%-->
 
 <h1>Rooms Available</h1>
 <div class="table-responsive">
-<table class="table table-striped">
+<table class="table table-striped">	
   <thead>
     <tr>
       <!--th>Entry</th>
@@ -50,7 +53,7 @@
         <!--td><%= room.apt_bathnum %></td-->
         <td><%= room.apt_gender %></td>
         <!--td><%= room.univ_id %></td-->
-        <%room.acpt_distance=room.distance_to('500 El Camino Real, Santa Clara') %>
+        <!--%room.acpt_distance=room.distance_to('500 El Camino Real, Santa Clara') %-->
         <td>
         	<% if room.acpt_distance.to_s =='' || room.acpt_distance < 1.0%>
         		<%='< 1 mile'%>
