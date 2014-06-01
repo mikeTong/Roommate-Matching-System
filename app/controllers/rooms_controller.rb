@@ -1,7 +1,7 @@
 require 'geocoder'
 require "rubygems"
-require "nokogiri"
 require "open-uri"
+require "nokogiri"
 
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
@@ -111,7 +111,8 @@ class RoomsController < ApplicationController
   		entry.css('#pagecontainer .body .postingtitle').each do |elem|
   			@room.desc = elem.content
   			puts elem.content
-  			rent = /\$(\d+)/.match(elem.content)[1]
+  			#rent = /\$(\d+)/.match(elem.content)[1]
+            rent = elem.content.scan(/\$(\d+)/)[1]
   			@room.rent = rent.to_f
   		end
   		
