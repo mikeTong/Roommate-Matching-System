@@ -111,10 +111,15 @@ class RoomsController < ApplicationController
   		entry.css('#pagecontainer .body .postingtitle').each do |elem|
   			@room.desc = elem.content
   			puts elem.content
-  			rent = /\$(\d+)/.match(elem.content)[1]
-  			@room.rent = rent.to_f
+  			rent = elem.content.scan(/\$(\d+)/)[1]
+  			#rent = /\$(\d+)/.match(elem.content)[1]
+			if is_number(rent)
+  				@room.rent = rent.to_f
+  			end
   		end
   		
+  		#calculate distance for this address
+  		#@room.acpt_distance = @room.distance_to('500 El Camino Real, Santa Clara')
   		
   		found = false
   		@rooms.each do |record|
@@ -131,6 +136,15 @@ class RoomsController < ApplicationController
   	end
   end		
   helper_method :pull_data_from_craiglist;
+  
+  def is_number(rent)
+    true if Float(rent) rescue false
+  end
+  
+  def calculate_distance(room)
+	room.acpt_distance = room.distance_to('500 El Camino Real, Santa Clara')
+  end 
+  helper_method :calculate_distance;
   
   private
     # Use callbacks to share common setup or constraints between actions.
