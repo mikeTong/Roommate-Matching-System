@@ -37,7 +37,7 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'nokogiri', '1.6.1'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'bootstrap-sass', '2.3.2.0'

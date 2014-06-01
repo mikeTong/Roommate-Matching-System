@@ -1,4 +1,8 @@
 require 'geocoder'
+require "rubygems"
+require "nokogiri"
+require "open-uri"
+
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
 
@@ -77,7 +81,57 @@ class RoomsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  def pull_data_from_craiglist
+  	@entryURL = []
+  	home_url = "http://sfbay.craigslist.org/apa/"
+  	list = Nokogiri::HTML(open(home_url))
+  	list.css('#pagecontainer #toc_rows .content .row .i').each do |row|
+  		second_half_url = row['href']
+  		entry_url = 'http://sfbay.craigslist.org' + second_half_url
+  		@entryURL.push(entry_url)
+  		if @entryURL.size == 20
+  			break
+  		end
+  	end
+  	@entryURL.each do |url|
+  		@room = Room.new
+	  	entry = Nokogiri::HTML(open(url))
+  		entry.css('#pagecontainer .body .userbody .mapAndAttrs div:nth-child(2)').each do |elem|
+  			@room.address = elem.content
+  		end
+  		
+  		entry.css('#pagecontainer .body .userbody .mapAndAttrs .attrgroup span:first-child b:first-child').each do |elem|
+  			@room.apt_roomnum = elem.content
+  		end
+  		
+  		entry.css('#pagecontainer .body .userbody .mapAndAttrs .attrgroup span:first-child b:nth-child(2)').each do |elem|
+  			@room.apt_bathnum = elem.content
+  		end
+  		
+  		entry.css('#pagecontainer .body .postingtitle').each do |elem|
+  			@room.desc = elem.content
+  			puts elem.content
+  			rent = /\$(\d+)/.match(elem.content)[1]
+  			@room.rent = rent.to_f
+  		end
+  		
+  		
+  		found = false
+  		@rooms.each do |record|
+  			if record.address == @room.address
+  				found = true
+  				break
+  			end
+  		end
+  		if found == false
+  			@room.save
+  		end
+  		
+  		#address = entry.css('#pagecontainer .body .userbody .mapAndAttrs .attrgroup ').content
+  	end
+  end		
+  helper_method :pull_data_from_craiglist;
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_room
