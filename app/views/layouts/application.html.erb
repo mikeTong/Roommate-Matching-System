@@ -1,38 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript"> 
+	<script src="jquery-1.11.1.min.js"> 
 
-	var current 
-
-	$(function() {          
-	    $('body').mousewheel(function(event, delta) {
-	        var $current = $('div.current');
-
-	        console.log(delta);
-	        console.log($current);
-
-	        if (delta > 0) {
-	            $prev = $current.prev();
-
-	            if ($prev.length) {
-	                $('body').scrollTo($prev, 500);
-	                $current.removeClass('current');
-	                $prev.addClass('current');
-	            }
-	        } else {
-	            $next = $current.next();
-
-	            if ($next.length) {
-	                $('body').scrollTo($next, 500);
-	                $current.removeClass('current');
-	                $next.addClass('current');
-	            }
-	        }
-
-	        event.preventDefault();
-	    });
-	});
+	
+	$('html, body').animate({
+	    scrollTop: ($('div.current').offset().top)
+	},500);
 
 	</script>
 
@@ -45,15 +19,13 @@
     <![endif]-->
 </head>
 <body>
-	<div class="current">
+<div class="current">
 	<%= render 'layouts/header' %>	
 </div>
 <div class="container">
-	<section id="forms">
-		<div class="current">
+<div class="current">
 	<%= yield %>
-		</div>
-</section>
+</div>
 	<%= render 'layouts/footer' %>
 </div>
 
