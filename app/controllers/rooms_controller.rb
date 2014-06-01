@@ -9,7 +9,10 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
   def index
+	# import the @universities entries
+	@universities = University.all
 	#set the search functionality
+	
 	if params[:search]
 		@rooms = Room.search(params[:search]).order("rent")
 	else
@@ -82,6 +85,7 @@ class RoomsController < ApplicationController
     end
   end
   def pull_data_from_craiglist
+    puts "-------"
   	@entryURL = []
   	home_url = "http://sfbay.craigslist.org/apa/"
   	list = Nokogiri::HTML(open(home_url))
@@ -96,6 +100,7 @@ class RoomsController < ApplicationController
   	@entryURL.each do |url|
   		@room = Room.new
 	  	entry = Nokogiri::HTML(open(url))
+	  	puts url
   		entry.css('#pagecontainer .body .userbody .mapAndAttrs div:nth-child(2)').each do |elem|
   			@room.address = elem.content
   		end
@@ -121,8 +126,12 @@ class RoomsController < ApplicationController
   		end
   		
   		#calculate distance for this address
-  		#@room.acpt_distance = @room.distance_to('500 El Camino Real, Santa Clara')
-  		
+  		if (dist = calculate_distance(@room)) != -1
+  			puts "-----"
+  			puts dist
+  			@room.acpt_distance = dist
+  		end
+  		#check whether this room was already listed
   		found = false
   		@rooms.each do |record|
   			if record.address == @room.address
@@ -144,7 +153,12 @@ class RoomsController < ApplicationController
   end
   
   def calculate_distance(room)
-	room.acpt_distance = room.distance_to('500 El Camino Real, Santa Clara')
+    @universities.each do |university|
+    	if university.univ_id == room.univ_id
+			return room.distance_to(university.address)
+		end
+	end
+	-1
   end 
   helper_method :calculate_distance;
   
@@ -156,6 +170,9 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:entry_id, :latitude, :longitude, :address, :rent, :util_fee, :apt_roomnum, :apt_bathnum, :apt_gender, :univ_id, :acpt_distance, :desc)
+      params.require(:room).permit(:entry_id, :latitude, :longitude, :address, :rent, 
+      :util_fee, :apt_roomnum, :apt_bathnum, 
+      :apt_gender, :univ_id, :acpt_distance, 
+      :desc, :usr_name, :landlord, :image_url, :email, :tel)
     end
 end

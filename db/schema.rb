@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140601183647) do
+ActiveRecord::Schema.define(version: 20140601204430) do
 
   create_table "rooms", force: true do |t|
     t.integer  "entry_id"
@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(version: 20140601183647) do
     t.string   "image_url"
     t.string   "email"
     t.decimal  "tel"
+  end
+
+  create_table "universities", force: true do |t|
+    t.string   "univ_name"
+    t.integer  "univ_id"
+    t.string   "univ_addr"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
