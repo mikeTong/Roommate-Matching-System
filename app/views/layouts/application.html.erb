@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="jquery-1.11.1.min.js"> 
-
-	
-	$('html, body').animate({
-	    scrollTop: ($('div.current').offset().top)
-	},500);
-
-	</script>
 
   <title>RoommateMatching</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -19,13 +11,39 @@
     <![endif]-->
 </head>
 <body>
-<div class="current">
 	<%= render 'layouts/header' %>	
-</div>
-<div class="container">
-<div class="current">
+	<div class="container bs-docs-container">
+		<div class="row">
+			<div class="col-md-9" role="main">
 	<%= yield %>
-</div>
+			</div>
+			<div class="col-md-3">
+			          <div class="bs-docs-sidebar hidden-print" role="complementary">
+			            <ul class="nav bs-docs-sidenav">
+              
+			                <li>
+			  <a href="#glyphicons">Glyphicons</a>
+			  <ul class="nav">
+			    <li><a href="#glyphicons-glyphs">Available glyphs</a></li>
+			    <li><a href="#glyphicons-how-to-use">How to use</a></li>
+			    <li><a href="#glyphicons-examples">Examples</a></li>
+			  </ul>
+			</li>
+			   </ul>
+			            <a class="back-to-top" href="#top">
+			              Back to top
+			            </a>
+						<%= form_tag(rooms_path,method: :get) do %>   
+						<%= text_field_tag :search, params[:search],placeholder: "Search", class: "form-control" %>
+						      <button class="btn" type="submit">Go!</button>
+						<% end %>
+			          </div>
+			        </div>
+			      </div>
+
+			    </div>
+			
+		</div>
 	<%= render 'layouts/footer' %>
 </div>
 

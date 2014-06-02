@@ -1,23 +1,5 @@
 
-<div class="center hero-unit">
-  <h1>Welcome to Roommate Matching System</h1>
-
-  <h2>
-    You can input your requirement here:
-	<%= form_tag(rooms_path,method: :get) do %>   
-	<%= text_field_tag :search, params[:search], placeholder: "Search " %>
-	      <button class="btn" type="submit">Go!</button>
-	<% end %>
-	<div >
-	<!--%= button_to 'Refresh Entries', method: :pull_data_from_craiglist, class: "btn btn-large btn-primary"%-->
-	</div>
-  </h2>
-</div>
-
-<!--Call helper method to pull data from craiglist-->
-<!--%pull_data_from_craiglist%-->
-<!--%calculate_distance%-->
-
+<%pull_data_from_craiglist%>
 <h1>Rooms Available</h1>
 <div class="table-responsive">
 <table class="table table-striped">	
