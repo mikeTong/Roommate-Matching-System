@@ -7,7 +7,7 @@ class Room < ActiveRecord::Base
 
 validates :address, presence: true
 validates :rent, presence: true
-validates :util_fee, presence: true
+#validates :util_fee, presence: true
 validates :apt_roomnum, presence: true
 
 
