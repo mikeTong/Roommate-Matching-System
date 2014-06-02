@@ -23,7 +23,15 @@ class RoomsController < ApplicationController
   		marker.lat room.latitude
   		marker.lng room.longitude
 	end
-
+	
+	#No need to call this function again. Used for deleting waste entries
+	#delete_waste_entries
+	
+	#Using for pull info from Craigslist.org, Craigslist.org all rights reserved
+	#pull_data_from_craiglist
+	
+	#If using this, "can't modify frozen Hash" may happen
+	#calculate_distance
   end
   
   # GET /rooms/1
@@ -111,28 +119,46 @@ class RoomsController < ApplicationController
   			@room.apt_bathnum = elem.content
   		end
   		
+  		entry.css('#pagecontainer .body .userbody .iw #ci #iwi').each do |elem|
+  				@room.image_url = elem['src'] if String(elem['src']) rescue break
+  		end
+  		
   		entry.css('#pagecontainer .body .postingtitle').each do |elem|
   			@room.desc = elem.content
-  			rent = elem.content.scan(/\$(\d+)/)[1]
-  			#rent = /\$(\d+)/.match(elem.content)[1]
+  			#rent = elem.content.scan(/\$(\d+)/)[1]
+  			if /\$(\d+)/.match(elem.content)
+  				rent = /\$(\d+)/.match(elem.content)[1]
+  			else rent = "not matched"
+  			end
+  			
 			if is_number(rent)
   				@room.rent = rent.to_f
   			else
   				@room.rent = -1.0
   			end
-
   		end
   		
   		#calculate distance for this address
-  		#if (dist = calculate_distance(@room)) != -1
-  		#	@room.acpt_distance = dist
-  		#end
+  		@room.univ_id = 1
+=begin
+  		@universities = University.all
+  		@universities.each do |university|
+  			if university.univ_id == @room.univ_id
+  				@room.acpt_distance = @room.distance_to(university.univ_addr)
+  				puts @room.acpt_distance
+  				break
+  			end
+  		end
+=end  		
   		#check whether this room was already listed
   		found = false
   		@rooms.each do |record|
   			if record.address == @room.address
   				found = true
-  				#@room.update(room_params)
+  				#if @room.update(room_params)
+  				#else
+  				#	puts @room.errors.full_messages
+  				#end
   				break
   			end
   		end
@@ -152,15 +178,40 @@ class RoomsController < ApplicationController
     true if Float(rent) rescue false
   end
   
-  def calculate_distance(room)
-    @universities.each do |university|
-    	if university.univ_id == room.univ_id
-			return room.distance_to(university.address)
+  def calculate_distance
+  	@universities = University.all
+  	@rooms.each do |room|
+  		counted = false
+    	@universities.each do |university|
+    		if university.univ_id == room.univ_id
+				room.update_attribute :acpt_distance, room.distance_to(university.univ_addr)
+				counted = true
+			end
+		end
+		if counted
+			puts "distance calculated successfully"
+		else room.update_attribute :acpt_distance, -1.0
 		end
 	end
-	-1
   end 
   helper_method :calculate_distance;
+  
+  def delete_waste_entries
+  	@rooms = Room.all
+  	@rooms.each do |room|
+  		# this is indicator of waste room entry. developer can change it
+  		if room.entry_id != 1 || room.entry_id != 2
+  			room.delete
+  		end 
+=begin
+  		if room.acpt_distance.to_s =='' || room.acpt_distance == -1.0
+  			room.delete
+  		end
+		"do nothing" if Float(room.acpt_distance)  rescue room.delete 
+=end
+  	end
+  end
+  helper_method :delete_waste_entries;
   
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -170,6 +221,7 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
+
       params.require(:room).permit(:entry_id, :latitude, :longitude, :address, :rent, 
       :util_fee, :apt_roomnum, :apt_bathnum, 
       :apt_gender, :univ_id, :acpt_distance, 

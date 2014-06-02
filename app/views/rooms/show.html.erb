@@ -62,11 +62,20 @@
   <%= @room.desc %>
 </p>
 
+<p>
+  <strong>Picture:</strong>
+<div style='width: 400px;'>
+  <div style='width: 600px; height: 300px;'>
+<%= image_tag @room.image_url %>
+</div>
+</div>
+</p>
+
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
 
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
+<div style='width: 600px;'>
+  <div id="map" style='width: 600px; height: 300px;'></div>
 </div>
 <script type="text/javascript">
 handler = Gmaps.build('Google');

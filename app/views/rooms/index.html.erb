@@ -1,5 +1,7 @@
-
-<%pull_data_from_craiglist%>
+<!--Using helper method is holly terrible!!-->
+<!--%delete_waste_entries%-->
+<!--%pull_data_from_craiglist%-->
+<!--%calculate_distance%-->
 
 <h1>Rooms Available</h1>
 <div class="table-responsive">
@@ -14,7 +16,7 @@
       <!--th>Util fee</th-->
       <th><center>Room Number</center></th>
       <!--th>Apt bathnum</th-->
-      <th><center>Gender</center></th>
+      <!--th><center>Gender</center></th-->
       <!--th>Univ</th-->
       <th><center>Distance</center></th>
       <th><center>Description</center></th>
@@ -31,20 +33,30 @@
         <!--td><%= room.longitude %></td-->
         <td><%= room.address %></td>
         <td>
-        	<% if room.rent == -1.0%>
-        		N/A
+        	<% if room.rent == -1.0 %>
+        		<%="N/A"%>
         	<% else %>
         		<%=room.rent%>
         	<%end%>
         </td>
         <!--td><%= room.util_fee %></td-->
-        <td><center><%= room.apt_roomnum %></center></td>
-        <!--td><%= room.apt_bathnum %></td-->
-        <td><%= room.apt_gender %></td>
-        <!--td><%= room.univ_id %></td-->
-        <%room.acpt_distance=room.distance_to('500 El Camino Real, Santa Clara') %>
         <td>
-        	<% if room.acpt_distance.to_s =='' || room.acpt_distance < 1.0%>
+        	<center>
+        		<%if room.apt_roomnum <= 0%>
+        			N/A
+        		<%else%>
+        			<%= room.apt_roomnum %>
+        		<%end%>
+        	</center>
+        </td>
+        <!--td><%= room.apt_bathnum %></td-->
+        <!--td><%= room.apt_gender %></td-->
+        <!--td><%= room.univ_id %></td-->
+        <!--%room.acpt_distance=room.distance_to('500 El Camino Real, Santa Clara') %-->
+        <td>
+        	<% if room.acpt_distance.to_s =='' || room.acpt_distance == -1.0%>
+				N/A
+        	<% elsif room.acpt_distance < 1.0 %>
         		<%='< 1 mile'%>
 			<% else %>
 			  	<%=room.acpt_distance.to_i.to_s + ' miles'%>
