@@ -25,7 +25,7 @@
   </thead>
 
   <tbody>
-    <% @rooms.each do |room| %>
+    <% @rooms.order('rent').each do |room| %>
       <tr>
         <!--Commented by Chen Sun:no need to show these attributes-->
         <!--td><%= room.entry_id %></td-->
