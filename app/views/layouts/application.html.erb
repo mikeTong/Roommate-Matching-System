@@ -36,6 +36,8 @@
 						<%= form_tag(rooms_path,method: :get) do %>   
 						<%= text_field_tag :search, params[:search],placeholder: "Search", class: "form-control" %>
 						      <button class="btn" type="submit">Go!</button>
+						      <!--Add by Chen Sun for re pull data from craiglist.org and recalculating distance-->
+						      <%= button_to 'Refresh Infors', :method=> :pull_data_from_craiglist%>
 						<% end %>
 			          </div>
 			        </div>
