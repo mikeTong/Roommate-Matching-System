@@ -1,7 +1,7 @@
 require 'geocoder'
 require "rubygems"
-require "open-uri"
 require "nokogiri"
+require "open-uri"
 
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
   # GET /rooms.json
   def index
 	# import the @universities entries
-	@universities = University.all
+	#@universities = University.all
 	#set the search functionality
 	
 	if params[:search]
@@ -85,7 +85,6 @@ class RoomsController < ApplicationController
     end
   end
   def pull_data_from_craiglist
-    puts "-------"
   	@entryURL = []
   	home_url = "http://sfbay.craigslist.org/apa/"
   	list = Nokogiri::HTML(open(home_url))
@@ -100,7 +99,6 @@ class RoomsController < ApplicationController
   	@entryURL.each do |url|
   		@room = Room.new
 	  	entry = Nokogiri::HTML(open(url))
-	  	puts url
   		entry.css('#pagecontainer .body .userbody .mapAndAttrs div:nth-child(2)').each do |elem|
   			@room.address = elem.content
   		end
@@ -115,32 +113,34 @@ class RoomsController < ApplicationController
   		
   		entry.css('#pagecontainer .body .postingtitle').each do |elem|
   			@room.desc = elem.content
-  			puts elem.content
-
   			rent = elem.content.scan(/\$(\d+)/)[1]
   			#rent = /\$(\d+)/.match(elem.content)[1]
 			if is_number(rent)
   				@room.rent = rent.to_f
+  			else
+  				@room.rent = -1.0
   			end
 
   		end
   		
   		#calculate distance for this address
-  		if (dist = calculate_distance(@room)) != -1
-  			puts "-----"
-  			puts dist
-  			@room.acpt_distance = dist
-  		end
+  		#if (dist = calculate_distance(@room)) != -1
+  		#	@room.acpt_distance = dist
+  		#end
   		#check whether this room was already listed
   		found = false
   		@rooms.each do |record|
   			if record.address == @room.address
   				found = true
+  				#@room.update(room_params)
   				break
   			end
   		end
   		if found == false
-  			@room.save
+  			if @room.save
+  			else
+        		puts @room.errors.full_messages
+  			end
   		end
   		
   		#address = entry.css('#pagecontainer .body .userbody .mapAndAttrs .attrgroup ').content

@@ -1,5 +1,6 @@
 
 <%pull_data_from_craiglist%>
+
 <h1>Rooms Available</h1>
 <div class="table-responsive">
 <table class="table table-striped">	
@@ -29,13 +30,19 @@
         <!--td><%= room.latitude %></td-->
         <!--td><%= room.longitude %></td-->
         <td><%= room.address %></td>
-        <td><%= room.rent %></td>
+        <td>
+        	<% if room.rent == -1.0%>
+        		N/A
+        	<% else %>
+        		<%=room.rent%>
+        	<%end%>
+        </td>
         <!--td><%= room.util_fee %></td-->
         <td><center><%= room.apt_roomnum %></center></td>
         <!--td><%= room.apt_bathnum %></td-->
         <td><%= room.apt_gender %></td>
         <!--td><%= room.univ_id %></td-->
-        <!--%room.acpt_distance=room.distance_to('500 El Camino Real, Santa Clara') %-->
+        <%room.acpt_distance=room.distance_to('500 El Camino Real, Santa Clara') %>
         <td>
         	<% if room.acpt_distance.to_s =='' || room.acpt_distance < 1.0%>
         		<%='< 1 mile'%>
