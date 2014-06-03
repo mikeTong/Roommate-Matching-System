@@ -1,4 +1,4 @@
-<%= form_for(@room) do |f| %>
+<%= form_for(@room, :html => {:multipart =>true}) do |f| %>
   <% if @room.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
@@ -56,6 +56,12 @@
     <%= f.label :desc %><br>
     <%= f.text_area :desc %>
   </div>
+  
+    <div class="field">
+    <%= f.label :image %><br/>
+    <%= f.file_field :image %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

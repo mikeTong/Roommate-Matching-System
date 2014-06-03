@@ -62,15 +62,12 @@
   <%= @room.desc %>
 </p>
 
-<p>
-  <strong>Picture:</strong>
-<div style='width: 400px;'>
-  <div style='width: 600px; height: 300px;'>
-<%= image_tag @room.image_url %>
-</div>
-</div>
-</p>
-
+<%if @room.image? %>
+	<p>
+  	<strong>Picture:</strong>
+	<%= image_tag @room.image.url %>
+	</p>
+<%end%>
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
 
