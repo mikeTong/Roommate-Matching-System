@@ -74,7 +74,7 @@ class RoomsController < ApplicationController
 	  	@universities = University.all
 		@universities.each do |university|
 			if university.univ_id == @room.univ_id
-				puts @room.distance_to(university.univ_addr)
+				#puts @room.distance_to(university.univ_addr)
 				@room.update_attribute :acpt_distance, @room.distance_to(university.univ_addr)
 				break
 			end

@@ -5,7 +5,8 @@ class Room < ActiveRecord::Base
 	  if query =~ /^\d+$/
 	  	return Room.where("acpt_distance < ? ", "#{query}")
 	  elsif query =~ /^\$\d+$/
-	  	return Room.where("rent < ? ", "#{query}")
+	  	money = /^\$(\d+)$/.match(query)[1]
+	  	return Room.where("rent < ? ", money)
 	  else
 	  	return Room.where("address like ? or desc like ?", "%#{query}%", "%#{query}%")
 	  end
