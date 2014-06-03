@@ -11,18 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :Apartment_ID%><br>
-    <%= f.number_field :entry_id %>
-  </div>
-  <div class="field">
+ <!-- <div class="field">
     <%= f.label :latitude %><br>
     <%= f.text_field :latitude %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude %><br>
-    <%= f.text_field :longitude %>
-  </div>
+  </div> -->
+ <!-- <div class="field">
+    <%#= f.label :longitude %><br>
+    <%#= f.text_field :longitude %>
+  </div> -->
   <div class="field">
     <%= f.label :address %><br>
     <%= f.text_field :address %>
@@ -51,9 +47,10 @@
     <%= f.label :univ_id %><br>
     <%= f.number_field :univ_id %>
   </div>
+
   <div class="field">
-    <%= f.label :acpt_distance %><br>
-    <%= f.number_field :acpt_distance %>
+    <%= f.label :Email%><br>
+    <%= f.text_area :email, :value => current_user.email %>
   </div>
   <div class="field">
     <%= f.label :desc %><br>
