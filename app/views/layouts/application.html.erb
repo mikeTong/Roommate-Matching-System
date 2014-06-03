@@ -25,30 +25,29 @@
 				<% if alert %>
 				  <p class="alert alert-danger"><%= alert %></p>
 				<% end %>
-	<%= yield %>
+				<%= yield %>
 			</div>
 			<div class="col-md-3">
 			          <div class="bs-docs-sidebar hidden-print" role="complementary">
 			            <ul class="nav bs-docs-sidenav">
               
 			                <li>
-			  <a href="#glyphicons">Glyphicons</a>
-			  <ul class="nav">
-			    <li><a href="#glyphicons-glyphs">Available glyphs</a></li>
-			    <li><a href="#glyphicons-how-to-use">How to use</a></li>
-			    <li><a href="#glyphicons-examples">Examples</a></li>
-			  </ul>
+			  <h2>Search</h2>
+			  <ul class="nav bs-docs-sidenav">
+		 			   </ul>
+
 			</li>
-			   </ul>
-			            <a class="back-to-top" href="#top">
-			              Back to top
-			            </a>
+
 						<%= form_tag(rooms_path,method: :get) do %>   
 						<%= text_field_tag :search, params[:search],placeholder: "Search", class: "form-control" %>
 						      <button class="btn" type="submit">Go!</button>
 						      <!--Add by Chen Sun for re pull data from craiglist.org and recalculating distance-->
 						      <!--%= button_to 'REFRESH INFORMATION', {:controller =>"rooms", :action=> "refresh_the_home"} %-->
 						<% end %>
+			            <a class="back-to-top" href="#top">
+			              Back to top
+			            </a>
+						
 			          </div>
 			        </div>
 			      </div>
