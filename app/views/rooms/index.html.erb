@@ -63,11 +63,11 @@
 			<%end%>
         </td>
         <td><%= room.desc %></td>
-        <td><%= link_to 'Show', room %></td>
+        <td><%= link_to 'Show', room, class:"btn btn-sm btn-default" %></td>
         
 		<%if room.email == current_user.email%>
-		<td><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<td><%= link_to 'Edit', edit_room_path(room), class:"btn btn-sm btn-success" %></td>
+        <td><%= link_to 'Destroy', room, method: :delete,class:"btn btn-sm btn-warning", data: { confirm: 'Are you sure?' } %></td>
 		<%else%>
 		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </td>
 		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>

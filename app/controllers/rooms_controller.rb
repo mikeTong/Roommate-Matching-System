@@ -25,15 +25,15 @@ class RoomsController < ApplicationController
 	end
 	
 	#No need to call this function again. Used for deleting waste entries
-	delete_waste_entries
+	#delete_waste_entries
 	
 	#Using for pull info from Craigslist.org, Craigslist.org all rights reserved
-	pull_data_from_craiglist
+	#pull_data_from_craiglist
 	
 	#controller should change the instance variable 
 	#@rooms = Room.all	 #done in calculate_distance
 	#If using this, "can't modify frozen Hash" may happen
-	calculate_distance
+	#calculate_distance
   end
   
   def refresh_the_home
