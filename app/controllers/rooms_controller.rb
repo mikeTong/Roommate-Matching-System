@@ -253,6 +253,6 @@ class RoomsController < ApplicationController
       params.require(:room).permit(:entry_id, :latitude, :longitude, :address, :rent, 
       :util_fee, :apt_roomnum, :apt_bathnum, 
       :apt_gender, :univ_id, :acpt_distance, 
-      :desc, :usr_name, :landlord, :image_url, :email, :tel)
+      :desc, :usr_name, :landlord, :image_url, :email, :tel, :image)
     end
 end
