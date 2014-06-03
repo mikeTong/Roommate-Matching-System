@@ -98,10 +98,60 @@ footer ul li {
 	right:100px;
 	display:none;
 	text-indent:-9999px;
-	background: url('icon_top.png') no-repeat;
 	outline: none !important;
 }
 
+
+#results_body {
+		}
+			#no_results {
+				display:none;
+				max-width:1024px;
+				min-width:800px;
+				margin:0 auto;
+				height:60px;
+				line-height:60px;
+				text-align:center;
+				background-color:#f6f7f7;
+				border-bottom:1px solid #cccccc;
+			}
+
+.results_row {
+		height:60px;
+		line-height:60px;
+		text-align:center;
+		font-family:'univers lt std cn', 'univers lt std cn ttf';
+	}
+		/*
+		Applies to entire results table
+		*/
+		#results .results_col {
+			float:left;
+			height:100%;
+		}
+		#results .set {
+			width:10%;
+		}
+		#results .cards {
+			width:20%;
+		}
+		#results .rebate_bars {
+			width:39%;
+		}
+		#results .rebate {
+			width:16%;
+		}
+		#results .more {
+			width:15%;
+		}
+
+.limited_container {
+	position:relative;
+	max-width:1024px;
+	min-width:800px;
+	margin:0 auto;
+	padding:0;
+}
 /*!
  * Bootstrap Docs (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
