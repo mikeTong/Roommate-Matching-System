@@ -40,7 +40,16 @@
 			</li>
 
 						<%= form_tag(rooms_path,method: :get) do %>   
-						<%= text_field_tag :search, params[:search],placeholder: "Search", class: "form-control" %>
+						<!--%= text_field_tag "search[]", params[:search][0],placeholder: "Search", class: "form-control" %-->
+						<!--%= text_field_tag "search[]", params[:search][1],placeholder: "Search", class: "form-control" %-->
+						<%= text_field_tag "search[]", "",placeholder: "Search", class: "form-control" %>
+			<li>
+			  <p>Please Input University Name:</p>
+			  <ul class="nav bs-docs-sidenav">
+		 			   </ul>
+
+			</li>
+						<%= text_field_tag "search[]", "",placeholder: "Search", class: "form-control" %>
 						      <button class="btn" type="submit">Go!</button>
 						      <!--Add by Chen Sun for re pull data from craiglist.org and recalculating distance-->
 						      <!--%= button_to 'REFRESH INFORMATION', {:controller =>"rooms", :action=> "refresh_the_home"} %-->
