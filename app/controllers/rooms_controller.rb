@@ -47,6 +47,7 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.json
   def show
+      @universities = University.all
       @hash = Gmaps4rails.build_markers(@room) do |room, marker|
           marker.lat room.latitude
           marker.lng room.longitude
@@ -126,7 +127,7 @@ class RoomsController < ApplicationController
   		second_half_url = row['href']
   		entry_url = 'http://sfbay.craigslist.org' + second_half_url
   		@entryURL.push(entry_url)
-  		if @entryURL.size == 30
+  		if @entryURL.size == 20
   			break
   		end
   	end
@@ -134,11 +135,7 @@ class RoomsController < ApplicationController
   		@room = Room.new
 	  	entry = Nokogiri::HTML(open(url))
   		entry.css('#pagecontainer .body .userbody .mapAndAttrs div:nth-child(2)').each do |elem|
-  			puts "this is elem.content " + elem.content
-  			@room.address = elem.content 
-  			if @room.address == "" || @room.address =~ /^\s+$/
-  				@room.address = "N/A"
-  			end
+  			@room.address = elem.content
   		end
   		
   		entry.css('#pagecontainer .body .userbody .mapAndAttrs .attrgroup span:first-child b:first-child').each do |elem|
@@ -193,7 +190,6 @@ class RoomsController < ApplicationController
   			end
   		end
   		if found == false
-  			puts @room.address
   			if @room.save
   			else
         		puts @room.errors.full_messages
@@ -214,10 +210,6 @@ class RoomsController < ApplicationController
   	@rooms = Room.all
   	@rooms.each do |room|
   		counted = false
-  		if room.address == "N/A"
-  			room.update_attribute :acpt_distance, -1.0
-  			break
-  		end
     	@universities.each do |university|
     		if university.univ_id == room.univ_id
 				room.update_attribute :acpt_distance, room.distance_to(university.univ_addr)
