@@ -2,7 +2,11 @@ class Room < ActiveRecord::Base
 	geocoded_by :address
 	after_validation :geocode
 	def self.search(query)
-	  Room.where("address like ?", "%#{query}%")
+	  if query =~ /^\d+$/
+	  	return Room.where("rent < ? ", "#{query}")
+	  else
+	  	return Room.where("address like ? or desc like ?", "%#{query}%", "%#{query}%")
+	  end
 	end
 
 validates :address, presence: true
