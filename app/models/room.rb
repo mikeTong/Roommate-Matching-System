@@ -3,6 +3,8 @@ class Room < ActiveRecord::Base
 	after_validation :geocode
 	def self.search(query)
 	  if query =~ /^\d+$/
+	  	return Room.where("acpt_distance < ? ", "#{query}")
+	  elsif query =~ /^\$\d+$/
 	  	return Room.where("rent < ? ", "#{query}")
 	  else
 	  	return Room.where("address like ? or desc like ?", "%#{query}%", "%#{query}%")

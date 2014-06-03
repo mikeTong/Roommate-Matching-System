@@ -36233,3 +36233,953 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 01:55:51
 
 Started GET "/assets/gmaps/google.js?body=1" for 127.0.0.1 at 2014-06-03 01:55:51 -0700
 >>>>>>> FETCH_HEAD
+
+
+Started GET "/rooms" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RoomsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mRoom Load (0.4ms)[0m  [1mSELECT "rooms".* FROM "rooms"   ORDER BY rent[0m
+  Rendered rooms/index.html.erb within layouts/application (47.1ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 388ms (Views: 354.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/site.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/universities.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/universities.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/gmaps/base.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/gmaps/base/base.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/gmaps/objects/base_builder.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/gmaps/objects/builder.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/gmaps/objects/handler.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/gmaps/objects/null_clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/gmaps/google/objects/common.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/gmaps/google/builders/bound.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/gmaps/google/builders/kml.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/gmaps/google/builders/map.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/gmaps/google/builders/circle.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/gmaps/google/builders/polygon.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:18 -0700
+
+
+Started GET "/assets/gmaps/google/builders/clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:19 -0700
+
+
+Started GET "/assets/gmaps/google/builders/marker.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:19 -0700
+
+
+Started GET "/assets/gmaps/google/objects/bound.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:19 -0700
+
+
+Started GET "/assets/gmaps/google/objects/circle.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:19 -0700
+
+
+Started GET "/assets/gmaps/google/objects/clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:19 -0700
+
+
+Started GET "/assets/gmaps/google/objects/kml.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:19 -0700
+
+
+Started GET "/assets/gmaps/google/objects/map.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:19 -0700
+
+
+Started GET "/assets/gmaps/google/objects/marker.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:19 -0700
+
+
+Started GET "/assets/gmaps/google/builders/polyline.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:19 -0700
+
+
+Started GET "/assets/gmaps/google/objects/polygon.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:19 -0700
+
+
+Started GET "/assets/gmaps/google/objects/polyline.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:19 -0700
+
+
+Started GET "/assets/gmaps/google/primitives.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:19 -0700
+
+
+Started GET "/assets/gmaps/google.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:19 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:19 -0700
+
+
+Started GET "/rooms?utf8=%E2%9C%93&search=2000" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+Processing by RoomsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"2000"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mRoom Load (0.2ms)[0m  [1mSELECT "rooms".* FROM "rooms"  WHERE (rent < '2000' )  ORDER BY rent[0m
+  Rendered rooms/index.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 43ms (Views: 38.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+
+
+Started GET "/assets/site.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+
+
+Started GET "/assets/universities.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+
+
+Started GET "/assets/universities.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+
+
+Started GET "/assets/gmaps/base.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:26 -0700
+
+
+Started GET "/assets/gmaps/base/base.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/objects/base_builder.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/objects/builder.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/objects/handler.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/objects/null_clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/objects/common.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/builders/bound.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/builders/circle.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/builders/clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/builders/kml.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/builders/map.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/builders/marker.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/builders/polygon.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/builders/polyline.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/objects/bound.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/objects/circle.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/objects/clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/objects/kml.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/objects/map.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/objects/marker.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/objects/polygon.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/objects/polyline.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google/primitives.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/gmaps/google.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:27 -0700
+
+
+Started GET "/rooms?utf8=%E2%9C%93&search=Warburton" for 127.0.0.1 at 2014-06-03 02:03:34 -0700
+Processing by RoomsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Warburton"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mRoom Load (0.2ms)[0m  [1mSELECT "rooms".* FROM "rooms"  WHERE (address like '%Warburton%' or desc like '%Warburton%')  ORDER BY rent[0m
+  Rendered rooms/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/site.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/universities.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/universities.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/base.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/base/base.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/objects/base_builder.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/objects/builder.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/objects/handler.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/objects/common.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/objects/null_clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/builders/bound.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/builders/circle.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/builders/clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/builders/kml.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/builders/map.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/builders/marker.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/builders/polygon.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/builders/polyline.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/objects/bound.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/objects/circle.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/objects/kml.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/objects/clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/objects/map.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/objects/marker.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/objects/polygon.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/objects/polyline.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google/primitives.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/gmaps/google.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:35 -0700
+
+
+Started GET "/rooms?utf8=%E2%9C%93&search=" for 127.0.0.1 at 2014-06-03 02:03:40 -0700
+Processing by RoomsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mRoom Load (0.5ms)[0m  [1mSELECT "rooms".* FROM "rooms"  WHERE (address like '%%' or desc like '%%')  ORDER BY rent[0m
+  Rendered rooms/index.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 42ms (Views: 38.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:40 -0700
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:40 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:40 -0700
+
+
+Started GET "/assets/site.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:40 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:40 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:40 -0700
+
+
+Started GET "/assets/universities.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:40 -0700
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at 2014-06-03 02:03:40 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:40 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:40 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:40 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:40 -0700
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:40 -0700
+
+
+Started GET "/assets/universities.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/base.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/base/base.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/objects/base_builder.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/objects/builder.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/objects/handler.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/objects/null_clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/objects/common.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/builders/bound.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/builders/circle.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/builders/clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/builders/kml.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/builders/map.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/builders/marker.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/builders/polygon.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/builders/polyline.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/objects/bound.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/objects/circle.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/objects/clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/objects/kml.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/objects/map.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/objects/marker.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/objects/polygon.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/objects/polyline.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google/primitives.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/gmaps/google.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:03:41 -0700
+
+
+Started GET "/rooms?utf8=%E2%9C%93&search=%242000" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+Processing by RoomsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"$2000"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mRoom Load (0.5ms)[0m  [1mSELECT "rooms".* FROM "rooms"  WHERE (rent < '$2000' )  ORDER BY rent[0m
+  Rendered rooms/index.html.erb within layouts/application (32.5ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 87ms (Views: 62.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/site.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/universities.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/universities.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/base.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/base/base.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/objects/base_builder.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/objects/builder.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/objects/handler.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/objects/null_clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/google/objects/common.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/google/builders/bound.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/google/builders/circle.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/google/builders/clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/google/builders/kml.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/google/builders/map.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/google/builders/marker.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/google/builders/polygon.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/google/builders/polyline.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/google/objects/bound.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/google/objects/circle.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/google/objects/clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:53 -0700
+
+
+Started GET "/assets/gmaps/google/objects/kml.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:54 -0700
+
+
+Started GET "/assets/gmaps/google/objects/map.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:54 -0700
+
+
+Started GET "/assets/gmaps/google/objects/marker.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:54 -0700
+
+
+Started GET "/assets/gmaps/google/objects/polygon.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:54 -0700
+
+
+Started GET "/assets/gmaps/google/objects/polyline.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:54 -0700
+
+
+Started GET "/assets/gmaps/google/primitives.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:54 -0700
+
+
+Started GET "/assets/gmaps/google.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:54 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:04:54 -0700
+
+
+Started GET "/rooms?utf8=%E2%9C%93&search=3" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+Processing by RoomsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mRoom Load (0.4ms)[0m  [1mSELECT "rooms".* FROM "rooms"  WHERE (acpt_distance < '3' )  ORDER BY rent[0m
+  Rendered rooms/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 46ms (Views: 42.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/site.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/universities.css?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/universities.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/base.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/base/base.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/objects/base_builder.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/objects/builder.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/objects/handler.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/objects/null_clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/objects/common.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/builders/bound.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/builders/circle.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/builders/clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/builders/kml.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/builders/map.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/builders/marker.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/builders/polygon.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/builders/polyline.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/objects/bound.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/objects/circle.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/objects/clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/objects/kml.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/objects/map.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/objects/marker.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/objects/polygon.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/objects/polyline.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google/primitives.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/gmaps/google.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:02 -0700
+
+
+Started GET "/rooms?utf8=%E2%9C%93&search=" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+Processing by RoomsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mRoom Load (0.3ms)[0m  [1mSELECT "rooms".* FROM "rooms"  WHERE (address like '%%' or desc like '%%')  ORDER BY rent[0m
+  Rendered rooms/index.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 38ms (Views: 35.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/site.min.css?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/universities.css?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/universities.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/base.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/base/base.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/objects/base_builder.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/objects/builder.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/objects/handler.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/objects/null_clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/objects/common.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/builders/bound.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/builders/circle.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/builders/clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/builders/kml.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/builders/map.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/builders/marker.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/builders/polygon.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/builders/polyline.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/objects/bound.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/objects/circle.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/objects/clusterer.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/objects/kml.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/objects/map.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/objects/marker.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/objects/polygon.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/objects/polyline.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google/primitives.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/gmaps/google.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-03 02:05:13 -0700
