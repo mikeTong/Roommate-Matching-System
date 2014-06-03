@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	
+
 
   <title>RoommateMatching</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -9,12 +11,20 @@
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
 </head>
 <body>
 	<%= render 'layouts/header' %>	
 	<div class="container bs-docs-container">
+
 		<div class="row">
 			<div class="col-md-9" role="main">
+				<% if notice %>
+				  <p class="alert alert-success"><%= notice %></p>
+				<% end %>
+				<% if alert %>
+				  <p class="alert alert-danger"><%= alert %></p>
+				<% end %>
 	<%= yield %>
 			</div>
 			<div class="col-md-3">
