@@ -28,12 +28,12 @@ class RoomsController < ApplicationController
 	#delete_waste_entries
 	
 	#Using for pull info from Craigslist.org, Craigslist.org all rights reserved
-	pull_data_from_craiglist
+	#pull_data_from_craiglist
 	
 	#controller should change the instance variable 
 	#@rooms = Room.all	 #done in calculate_distance
 	#If using this, "can't modify frozen Hash" may happen
-	calculate_distance
+	#calculate_distance
   end
   
   def refresh_the_home
@@ -67,9 +67,17 @@ class RoomsController < ApplicationController
   # POST /rooms.json
   def create
     @room = Room.new(room_params)
-
+	
     respond_to do |format|
       if @room.save
+	  	@universities = University.all
+		@universities.each do |university|
+			if university.univ_id == @room.univ_id
+				puts @room.distance_to(university.univ_addr)
+				@room.update_attribute :acpt_distance, @room.distance_to(university.univ_addr)
+				break
+			end
+		end
         format.html { redirect_to @room, notice: 'Room was successfully created.' }
         format.json { render :show, status: :created, location: @room }
       else
@@ -84,6 +92,14 @@ class RoomsController < ApplicationController
   def update
     respond_to do |format|
       if @room.update(room_params)
+        @universities = University.all
+		@universities.each do |university|
+			if university.univ_id == @room.univ_id
+				puts @room.distance_to(university.univ_addr)
+				@room.update_attribute :acpt_distance, @room.distance_to(university.univ_addr)
+				break
+			end
+		end
         format.html { redirect_to @room, notice: 'Room was successfully updated.' }
         format.json { render :show, status: :ok, location: @room }
       else
